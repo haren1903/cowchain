@@ -1,0 +1,88 @@
+/*
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+/**
+ * Sample business network definition.
+ */
+namespace ch.cowchain
+
+asset Cow identified by cowId {
+	o String cowId
+    o DateTime birthdate
+	o String breed
+	o DateTime registrationDate optional
+  	o Boolean isRegistered default=false
+  	o Boolean isHealthy default=false
+  	o Boolean isSlaughtered default=false
+  	o Double weight
+    --> Farmer owner
+  	--> Operator operator optional
+  	--> Vet vet optional
+  	--> Slaughter slaughter optional
+    --> Cow father optional
+    --> Cow mother optional
+}
+
+asset Meat identified by id {
+    o String id
+	o Double weight
+	o MeatType type
+	--> Farmer farmer
+  	--> Operator operator
+  	--> Vet vet
+  	--> Slaughter slaughter
+    --> Cow cow
+}
+
+participant Farmer identified by TVDID {
+	o String TVDID
+}
+
+participant Operator identified by id {
+	o String id
+}
+  
+participant Vet identified by id {
+	o String id
+}
+  
+participant Slaughter identified by id {
+	o String id
+}
+  
+transaction RegisterCowByOperator {
+	--> Operator operator
+	--> Cow cow
+}
+
+transaction CheckCowHealthByVet {
+	--> Vet vet
+	--> Cow cow
+}
+  
+transaction ToSlaughter {
+	--> Slaughter slaughter
+	--> Cow cow
+}
+  
+transaction Dismantling {
+    o MeatType meatType
+  	o Double weight
+	--> Cow cow
+}  
+  
+enum MeatType {
+  o RIB
+	o FILLET
+}
