@@ -2,6 +2,7 @@
 
 Based on https://github.com/4eyes/workshoptage2018
 
+
 Let's build a Blockchain application based on [Hyperledger Fabric](https://www.hyperledger.org/projects/fabric)
 and [Hyperledger Composer](https://www.hyperledger.org/projects/composer).
 
