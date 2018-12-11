@@ -1,4 +1,4 @@
-# FHNW Master Thesis - Cowchain
+# [FHNW](https://www.fhnw.ch) Master Thesis - Cowchain
 
 Based on https://github.com/4eyes/workshoptage2018
 
@@ -7,7 +7,7 @@ Let's build a Blockchain application based on [Hyperledger Fabric](https://www.h
 and [Hyperledger Composer](https://www.hyperledger.org/projects/composer).
 
 ## About 
-My name is Harun Seyfettin Uslu, student at the FHNW in Switzerland.
+My name is [Harun Seyfettin Uslu](https://www.linkedin.com/in/harunseyfettinuslu), student at the FHNW in Switzerland.
 
 ## Supported platforms
 
