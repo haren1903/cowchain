@@ -14,3 +14,35 @@
 20:50:52.285436 version@stat F·[1] S·19KiB[19KiB] Sc·[0.25]
 20:50:52.293140 db@janitor F·3 G·0
 20:50:52.293503 db@open done T·34.0835ms
+=============== Dec 13, 2018 (CET) ===============
+20:06:42.261946 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+20:06:42.268841 version@stat F·[1] S·19KiB[19KiB] Sc·[0.25]
+20:06:42.269466 db@open opening
+20:06:42.272906 journal@recovery F·1
+20:06:42.274966 journal@recovery recovering @3
+20:06:42.281911 memdb@flush created L0@5 N·33 S·963B "com..\x01<\x00,v499":"com..44c,v526"
+20:06:42.283512 version@stat F·[2] S·20KiB[20KiB] Sc·[0.50]
+20:06:42.290788 db@janitor F·4 G·0
+20:06:42.291122 db@open done T·21.305755ms
+21:53:50.244416 table@compaction L0·2 -> L1·0 S·20KiB Q·569
+21:53:50.254679 table@build created L1@8 N·398 S·19KiB "com..a\x00\x00,v5":"com..8c4,v363"
+21:53:50.255517 version@stat F·[0 1] S·19KiB[0B 19KiB] Sc·[0.00 0.00]
+21:53:50.259454 table@compaction committed F-1 S-900B Ke·0 D·128 T·13.350112ms
+21:53:50.261673 table@remove removed @5
+21:53:50.267843 table@remove removed @2
+=============== Dec 14, 2018 (CET) ===============
+07:41:19.457696 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+07:41:19.463946 version@stat F·[0 1] S·19KiB[0B 19KiB] Sc·[0.00 0.00]
+07:41:19.464566 db@open opening
+07:41:19.466133 journal@recovery F·1
+07:41:19.476665 journal@recovery recovering @6
+07:41:19.484430 memdb@flush created L0@9 N·105 S·3KiB "com..\x01@\x00,v532":"com..4d4,v547"
+07:41:19.498588 version@stat F·[1 1] S·22KiB[3KiB 19KiB] Sc·[0.25 0.00]
+07:41:19.507121 db@janitor F·4 G·0
+07:41:19.507457 db@open done T·42.5065ms
+08:15:58.704035 table@compaction L0·1 -> L1·1 S·22KiB Q·699
+08:15:58.721124 table@build created L1@12 N·476 S·23KiB "com..a\x00\x00,v5":"com..8c4,v363"
+08:15:58.721679 version@stat F·[0 1] S·23KiB[0B 23KiB] Sc·[0.00 0.00]
+08:15:58.725143 table@compaction committed F-1 S+569B Ke·0 D·27 T·18.2302ms
+08:15:58.728678 table@remove removed @9
+08:15:58.731320 table@remove removed @8

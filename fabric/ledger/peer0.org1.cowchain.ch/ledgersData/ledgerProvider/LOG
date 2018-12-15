@@ -14,3 +14,21 @@
 20:50:52.233583 version@stat F·[1] S·173B[173B] Sc·[0.25]
 20:50:52.240891 db@janitor F·3 G·0
 20:50:52.241419 db@open done T·22.6476ms
+=============== Dec 13, 2018 (CET) ===============
+20:06:42.225745 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+20:06:42.232567 version@stat F·[1] S·173B[173B] Sc·[0.25]
+20:06:42.233241 db@open opening
+20:06:42.235075 journal@recovery F·1
+20:06:42.238829 journal@recovery recovering @3
+20:06:42.246715 version@stat F·[1] S·173B[173B] Sc·[0.25]
+20:06:42.254842 db@janitor F·3 G·0
+20:06:42.255252 db@open done T·21.701628ms
+=============== Dec 14, 2018 (CET) ===============
+07:41:19.419951 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+07:41:19.427106 version@stat F·[1] S·173B[173B] Sc·[0.25]
+07:41:19.427844 db@open opening
+07:41:19.430392 journal@recovery F·1
+07:41:19.433437 journal@recovery recovering @5
+07:41:19.442225 version@stat F·[1] S·173B[173B] Sc·[0.25]
+07:41:19.450887 db@janitor F·3 G·0
+07:41:19.451250 db@open done T·23.052ms

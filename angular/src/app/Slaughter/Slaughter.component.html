@@ -16,7 +16,7 @@
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <h4 class="modal-title" id="addParticipantModalLabel">Create participant</h4>
+          <h4 class="modal-title" id="addParticipantModalLabel">Create Slaughter</h4>
             <p class="modal-intro">Enter the required values below.</p>
         </div>
         <form [formGroup]="myForm">
@@ -30,6 +30,13 @@
                   <label for="id">id</label>
                   
                     <input formControlName="id" type="text" class="form-control">
+                  
+                </div>
+
+                <div class="form-group text-left">
+                  <label for="SlaughterName">SlaughterName</label>
+                  
+                    <input formControlName="SlaughterName" type="text" class="form-control">
                   
                 </div>
               
@@ -58,11 +65,11 @@
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <h4 class="modal-title" id="deleteParticipantModalLabel">Delete Participant</h4>
+          <h4 class="modal-title" id="deleteParticipantModalLabel">Delete Slaughter</h4>
         </div>
         <form [formGroup]="myForm">
           <div class="modal-body">
-            Are you sure you want to delete this participant?
+            Are you sure you want to delete this Slaughter?
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
@@ -111,6 +118,8 @@
             <tr class="thead-cols">
               
                   <th class="info">id</th>
+
+                  <th class="info">SlaughterName</th>
               
                 <th class="info-actions">Actions</th>
             </tr>
@@ -120,6 +129,8 @@
   
               
                   <td class="participant-properties">{{participant.id}}</td>
+
+                  <td class="participant-properties">{{participant.SlaughterName}}</td>
               
               <td>
 

@@ -123,12 +123,14 @@ export class CowComponent implements OnInit {
       'cowId': this.cowId.value,
       'birthdate': this.birthdate.value,
       'breed': this.breed.value,
-      'registrationDate': this.registrationDate.value,
       'isRegistered': this.isRegistered.value,
       'isHealthy': this.isHealthy.value,
       'isSlaughtered': this.isSlaughtered.value,
       'weight': this.weight.value,
-      'owner': 'resource:ch.cowchain.Farmer#' + this.owner.value
+      'owner': 'resource:ch.cowchain.Farmer#' + this.owner.value,
+      'father': 'resource:ch.cowchain.Cow#' + this.father.value,
+      'mother': 'resource:ch.cowchain.Cow#' + this.mother.value
+      
     };
 
     this.myForm.setValue({

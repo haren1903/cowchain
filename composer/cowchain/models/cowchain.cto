@@ -19,13 +19,16 @@ namespace ch.cowchain
 
 asset Cow identified by cowId {
 	o String cowId
-    o DateTime birthdate
+  o DateTime birthdate
 	o String breed
 	o DateTime registrationDate optional
-  	o Boolean isRegistered default=false
-  	o Boolean isHealthy default=false
-  	o Boolean isSlaughtered default=false
-  	o Double weight
+  o DateTime healthCheckDate optional
+  o DateTime slaughterDate optional
+  o DateTime dismantlingDate optional
+  o Boolean isRegistered default=false
+  o Boolean isHealthy default=false
+  o Boolean isSlaughtered default=false
+  o Double weight
     --> Farmer owner
   	--> Operator operator optional
   	--> Vet vet optional
@@ -35,10 +38,14 @@ asset Cow identified by cowId {
 }
 
 asset Meat identified by id {
-    o String id
+  o String id
 	o Double weight
 	o MeatType type
-	--> Farmer farmer
+  o DateTime registrationDate optional
+  o DateTime healthCheckDate optional
+  o DateTime slaughterDate optional
+  o DateTime dismantlingDate optional
+	  --> Farmer farmer
   	--> Operator operator
   	--> Vet vet
   	--> Slaughter slaughter
@@ -47,6 +54,7 @@ asset Meat identified by id {
 
 participant Farmer identified by TVDID {
 	o String TVDID
+  o String FarmerName
 }
 
 participant Operator identified by id {
@@ -59,6 +67,7 @@ participant Vet identified by id {
   
 participant Slaughter identified by id {
 	o String id
+  o String SlaughterName
 }
   
 transaction RegisterCowByOperator {

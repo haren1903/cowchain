@@ -33,11 +33,12 @@ export class FarmerComponent implements OnInit {
   private errorMessage;
 
   TVDID = new FormControl('', Validators.required);
-
+  FarmerName  = new FormControl('', Validators.required);
 
   constructor(public serviceFarmer: FarmerService, fb: FormBuilder) {
     this.myForm = fb.group({
-      TVDID: this.TVDID
+      TVDID: this.TVDID,
+      FarmerName: this.FarmerName
     });
   };
 
@@ -94,11 +95,13 @@ export class FarmerComponent implements OnInit {
   addParticipant(form: any): Promise<any> {
     this.participant = {
       $class: 'ch.cowchain.Farmer',
-      'TVDID': this.TVDID.value
+      'TVDID': this.TVDID.value,
+      'FarmerName': this.FarmerName.value
     };
 
     this.myForm.setValue({
-      'TVDID': null
+      'TVDID': null,
+      'FarmerName': null
     });
 
     return this.serviceFarmer.addParticipant(this.participant)
@@ -106,7 +109,8 @@ export class FarmerComponent implements OnInit {
     .then(() => {
       this.errorMessage = null;
       this.myForm.setValue({
-        'TVDID': null
+        'TVDID': null,
+        'FarmerName': null
       });
       this.loadAll(); 
     })
@@ -173,7 +177,8 @@ export class FarmerComponent implements OnInit {
     .then((result) => {
       this.errorMessage = null;
       const formObject = {
-        'TVDID': null
+        'TVDID': null,
+        'FarmerName': null
       };
 
       if (result.TVDID) {
@@ -198,7 +203,8 @@ export class FarmerComponent implements OnInit {
 
   resetForm(): void {
     this.myForm.setValue({
-      'TVDID': null
+      'TVDID': null,
+      'FarmerName': null
     });
   }
 }

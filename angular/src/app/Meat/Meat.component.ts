@@ -35,6 +35,7 @@ export class MeatComponent implements OnInit {
   id = new FormControl('', Validators.required);
   weight = new FormControl('', Validators.required);
   type = new FormControl('', Validators.required);
+  dismantlingDate = new FormControl('', Validators.required);
   cow = new FormControl('', Validators.required);
   farmer = new FormControl('', Validators.required);
   operator = new FormControl('', Validators.required);
@@ -46,6 +47,7 @@ export class MeatComponent implements OnInit {
       id: this.id,
       weight: this.weight,
       type: this.type,
+      dismantlingDate: this.dismantlingDate,
       cow: this.cow,
       farmer: this.farmer,
       operator: this.operator,
@@ -119,6 +121,7 @@ export class MeatComponent implements OnInit {
       'weight': null,
       'type': null,
       'cow': null,
+      'dismantlingDate': null,
       'farmer': null,
       'operator': null,
       'vet': null,
@@ -134,6 +137,7 @@ export class MeatComponent implements OnInit {
         'weight': null,
         'type': null,
         'cow': null,
+        'dismantlingDate': null,
         'farmer': null,
         'operator': null,
         'vet': null,
@@ -156,6 +160,7 @@ export class MeatComponent implements OnInit {
       $class: 'ch.cowchain.Meat',
       'weight': this.weight.value,
       'type': this.type.value,
+      'dismantlingDate': this.dismantlingDate.value,
       'cow': this.cow.value,
       'farmer': this.farmer.value,
       'operator': this.operator.value,
@@ -215,6 +220,7 @@ export class MeatComponent implements OnInit {
         'weight': null,
         'type': null,
         'cow': null,
+        'dismantlingDate': null,
         'farmer': null,
         'operator': null,
         'vet': null,
@@ -237,6 +243,12 @@ export class MeatComponent implements OnInit {
         formObject.type = result.type;
       } else {
         formObject.type = null;
+      }
+
+      if (result.dismantlingDate) {
+        formObject.dismantlingDate = result.dismantlingDate;
+      } else {
+        formObject.dismantlingDate = null;
       }
 
       if (result.cow) {
@@ -288,6 +300,7 @@ export class MeatComponent implements OnInit {
       'id': null,
       'weight': null,
       'type': null,
+      'dismantlingDate': null,
       'cow': null,
       'farmer': null,
       'operator': null,

@@ -33,11 +33,12 @@ export class SlaughterComponent implements OnInit {
   private errorMessage;
 
   id = new FormControl('', Validators.required);
-
+  SlaughterName  = new FormControl('', Validators.required);
 
   constructor(public serviceSlaughter: SlaughterService, fb: FormBuilder) {
     this.myForm = fb.group({
-      id: this.id
+      id: this.id,
+      SlaughterName: this.SlaughterName
     });
   };
 
@@ -94,11 +95,13 @@ export class SlaughterComponent implements OnInit {
   addParticipant(form: any): Promise<any> {
     this.participant = {
       $class: 'ch.cowchain.Slaughter',
-      'id': this.id.value
+      'id': this.id.value,
+      'SlaughterName': this.SlaughterName.value
     };
 
     this.myForm.setValue({
-      'id': null
+      'id': null,
+      'SlaughterName': null
     });
 
     return this.serviceSlaughter.addParticipant(this.participant)
@@ -106,7 +109,9 @@ export class SlaughterComponent implements OnInit {
     .then(() => {
       this.errorMessage = null;
       this.myForm.setValue({
-        'id': null
+        'id': null,
+        'SlaughterName': null
+
       });
       this.loadAll(); 
     })
@@ -173,7 +178,8 @@ export class SlaughterComponent implements OnInit {
     .then((result) => {
       this.errorMessage = null;
       const formObject = {
-        'id': null
+        'id': null,
+        'SlaughterName': null
       };
 
       if (result.id) {
@@ -198,7 +204,8 @@ export class SlaughterComponent implements OnInit {
 
   resetForm(): void {
     this.myForm.setValue({
-      'id': null
+      'id': null,
+      'SlaughterName': null
     });
   }
 }

@@ -23,6 +23,7 @@ import {Event} from './org.hyperledger.composer.system';
       id: string;
       weight: number;
       type: MeatType;
+      dismantlingDate: Date;
       cow: Cow;
       farmer: Farmer;
       operator: Operator;
@@ -31,6 +32,7 @@ import {Event} from './org.hyperledger.composer.system';
    }
    export class Farmer extends Participant {
       TVDID: string;
+      FarmerName: string;
    }
    export class Operator extends Participant {
       id: string;
@@ -40,6 +42,7 @@ import {Event} from './org.hyperledger.composer.system';
    }
    export class Slaughter extends Participant {
       id: string;
+      SlaughterName: string;
    }
    export class RegisterCowByOperator extends Transaction {
       operator: Operator;
@@ -57,6 +60,7 @@ import {Event} from './org.hyperledger.composer.system';
       meatType: MeatType;
       weight: number;
       cow: Cow;
+      farmerName: string;
    }
    export enum MeatType {
       RIB,

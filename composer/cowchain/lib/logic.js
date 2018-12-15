@@ -34,6 +34,7 @@ async function checkCowHealthByVet(tx) {
 if(tx.cow.isRegistered) {
   tx.cow.vet = tx.vet;
     tx.cow.isHealthy = true;
+    tx.cow.healthCheckDate = new Date();
     let assetRegistry = await getAssetRegistry('ch.cowchain.Cow');
     await assetRegistry.update(tx.cow);
 } else {
@@ -49,6 +50,7 @@ async function toSlaughter(tx) {
 if(tx.cow.isHealthy) {
   tx.cow.slaughter = tx.slaughter;
     tx.cow.isSlaughtered = true;
+    tx.cow.slaughterDate = new Date();
     let assetRegistry = await getAssetRegistry('ch.cowchain.Cow');
     await assetRegistry.update(tx.cow);
 } else {
@@ -62,6 +64,9 @@ if(tx.cow.isHealthy) {
 */
 async function dismantling(tx) {
     if (tx.cow.isSlaughtered) {
+    // update dismantlingDate
+    var dismantlingDate = tx.cow.dismantlingDate;
+    dismantlingDate = new Date();
     // current timestamp as string
     let date = String(Date.now());
     // Math.random should be unique because of its seeding algorithm.
@@ -76,10 +81,11 @@ async function dismantling(tx) {
     meat.weight = tx.weight;
     meat.type = tx.meatType;
     meat.cow = tx.cow;
+    meat.dismantlingDate = dismantlingDate;
     meat.farmer = tx.cow.owner;
     meat.operator = tx.cow.operator;
     meat.vet = tx.cow.vet;
-    meat.slaughter = tx.cow.slaughter;
+    meat.slaughter = tx.cow.slaughter;  
     
     let assetRegistry = await getAssetRegistry('ch.cowchain.Meat');
     await assetRegistry.add(meat);
