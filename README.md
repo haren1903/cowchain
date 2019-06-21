@@ -1,4 +1,4 @@
-# FHNW Master Thesis - Cowchain
+# Cowchain
 
 Based on https://github.com/4eyes/workshoptage2018
 
